@@ -6,15 +6,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import utils.DataLibrary;
 
+import java.io.IOException;
 import java.time.Duration;
 
 public class LoginServicenowInstance {
 
 
-    @Test
-    public void wakeupServicenowInstance() throws InterruptedException {
+    @Test(dataProvider = "fetchData")
+    public void wakeupServicenowInstance(String mail, String password) throws InterruptedException {
 
         ChromeDriver driver = new ChromeDriver();
         driver.get("https://developer.servicenow.com/");
@@ -31,9 +34,9 @@ public class LoginServicenowInstance {
         SearchContext shadowRoot4 = element3.getShadowRoot();
         WebElement signInButton = shadowRoot4.findElement(By.cssSelector("button.dps-link.-primary.-md"));
         signInButton.click();
-        driver.findElement(By.xpath("//input[@id='email']")).sendKeys("jeyagokul7@gmail.com");
+        driver.findElement(By.xpath("//input[@id='email']")).sendKeys(mail);
         driver.findElement(By.id("username_submit_button")).click();
-        driver.findElement(By.id("password")).sendKeys("Java$232");
+        driver.findElement(By.id("password")).sendKeys(password);
         driver.findElement(By.id("password_submit_button")).click();
         Thread.sleep(5000);
 
@@ -58,7 +61,7 @@ public class LoginServicenowInstance {
                 .until(ExpectedConditions.elementToBeClickable(startBuildButton))
                 .click();
 
-        driver.close();
+        driver.quit();
         /*WebElement shadowHost1 = driver.findElement(By.xpath("//dps-app"));
         WebElement shadowRoot1 = (WebElement) driver.executeScript("return arguments[0].shadowRoot", shadowHost1);
         WebElement shadowHost2 = shadowRoot1.findElement(By.xpath("//dps-navigation-header"));
@@ -70,6 +73,11 @@ public class LoginServicenowInstance {
         WebElement signInButton = shadowRoot4.findElement(By.xpath("//span[text()='Sign In']/.."));
         signInButton.click();
 */
+    }
+
+    @DataProvider(name = "fetchData")
+    public String[][] getData() throws IOException {
+        return DataLibrary.excelData();
     }
 
 }
