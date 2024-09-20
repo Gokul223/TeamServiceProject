@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import utils.DataLibrary;
+import utils.RetryEngine;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -16,7 +17,7 @@ import java.time.Duration;
 public class LoginServicenowInstance {
 
 
-    @Test(dataProvider = "fetchData")
+    @Test(dataProvider = "fetchData", retryAnalyzer = RetryEngine.class)
     public void wakeupServicenowInstance(String mail, String password) throws InterruptedException {
 
         ChromeDriver driver = new ChromeDriver();
