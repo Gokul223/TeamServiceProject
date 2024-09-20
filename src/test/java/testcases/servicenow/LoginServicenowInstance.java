@@ -1,6 +1,7 @@
 package testcases.servicenow;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,6 +14,7 @@ import utils.RetryEngine;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.List;
 
 public class LoginServicenowInstance {
 
@@ -50,9 +52,8 @@ public class LoginServicenowInstance {
 
         //span[text()='Waking up instance']
         try {
-            WebElement wakeupInstance = startBuildRoot2.findElement(By.xpath("//span[text()='Waking up instance']"));
             new WebDriverWait(driver, Duration.ofSeconds(60))
-                    .until(ExpectedConditions.invisibilityOf(wakeupInstance));
+                    .until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[text()='Waking up instance']")));
         } catch (Exception e) {
             System.out.println("");
         }
@@ -61,6 +62,31 @@ public class LoginServicenowInstance {
         new WebDriverWait(driver, Duration.ofSeconds(60))
                 .until(ExpectedConditions.elementToBeClickable(startBuildButton))
                 .click();
+        driver.switchTo().window(driver.getWindowHandle());
+        WebElement profileHost = driver.findElement(By.tagName("dps-app"));
+        SearchContext profileHostShadowRoot = profileHost.getShadowRoot();
+        WebElement profileHost2 = profileHostShadowRoot.findElement(By.cssSelector("dps-navigation-header"));
+        SearchContext profileHostShadowRoot2 = profileHost2.getShadowRoot();
+        WebElement profile = profileHostShadowRoot2.findElement(By.cssSelector("dps-login"));
+        profile.click();
+        WebElement navigationHeaderHost = profileHostShadowRoot2.findElement(By.cssSelector("dps-navigation-login-management"));
+        SearchContext navigationHeaderHostShadowRoot = navigationHeaderHost.getShadowRoot();
+        WebElement navigationInstanceManagementHost = navigationHeaderHostShadowRoot.findElement(By.cssSelector("dps-navigation-instance-management"));
+        SearchContext navigationInstanceManagementHostShadowRoot = navigationInstanceManagementHost.getShadowRoot();
+//        navigationInstanceManagementHostShadowRoot.findElement(By.xpath("//dps-button[text()='Manage instance password']")).click();
+        navigationInstanceManagementHostShadowRoot.findElement(By.cssSelector("img[src='reset-admin-password-icon.svg'] + dps-button")).click();
+        WebElement instanceModalHost = profileHostShadowRoot.findElement(By.cssSelector("dps-instance-modal"));
+        SearchContext instanceModalHostShadowRoot = instanceModalHost.getShadowRoot();
+//        String instance = instanceModalHostShadowRoot.findElement(By.cssSelector("div.instanceModal-confirmationView")).getText();
+//        System.out.println(instance);
+
+        List<WebElement> instanceData = instanceModalHostShadowRoot.findElements(By.cssSelector("span.resetPassword-value"));
+        System.out.println("============================="+mail+" Instance=====================================");
+        System.out.println("Instance url: "+instanceData.get(1).getText());
+        System.out.println("Instance username: "+instanceData.get(2).getText());
+        System.out.println("Instance password: "+instanceData.get(3).getText());
+        System.out.println("==========================COMPLETED=================================");
+
 
         driver.quit();
         /*WebElement shadowHost1 = driver.findElement(By.xpath("//dps-app"));
