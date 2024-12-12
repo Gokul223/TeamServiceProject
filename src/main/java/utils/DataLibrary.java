@@ -27,9 +27,7 @@ public class DataLibrary {
         System.out.println("Column count is "+columnCount);
 
         // Step 5: Get All the cell values
-
         //declare a 2d Array String as data
-
         String[][] data = new String[rowCount][columnCount];
 
         // iterate the row 1st
@@ -45,6 +43,7 @@ public class DataLibrary {
             }
 
         }
+
 
         //Step 6: Close the workbook
         wb.close();
