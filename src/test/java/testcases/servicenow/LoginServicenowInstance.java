@@ -27,7 +27,7 @@ public class LoginServicenowInstance {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
         Thread.sleep(5000);
-        /*WebElement body = driver.findElement(By.xpath("//dps-app"));
+        WebElement body = driver.findElement(By.xpath("//dps-app"));
 
         SearchContext shadowRoot1 = body.getShadowRoot();
         WebElement element1 = shadowRoot1.findElement(By.cssSelector("dps-navigation-header"));
@@ -37,7 +37,7 @@ public class LoginServicenowInstance {
         WebElement element3 = shadowRoot3.findElement(By.cssSelector("dps-button"));
         SearchContext shadowRoot4 = element3.getShadowRoot();
         WebElement signInButton = shadowRoot4.findElement(By.cssSelector("button.dps-link.-primary.-md"));
-        signInButton.click();*/
+        signInButton.click();
         driver.findElement(By.xpath("//input[@id='email']")).sendKeys(mail);
         driver.findElement(By.id("username_submit_button")).click();
         driver.findElement(By.id("password")).sendKeys(password);
@@ -56,7 +56,7 @@ public class LoginServicenowInstance {
             new WebDriverWait(driver, Duration.ofSeconds(60))
                     .until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[text()='Waking up instance']")));
         } catch (Exception e) {
-            System.out.println("");
+            System.out.println();
         }
 //        Thread.sleep(50000);
         WebElement startBuildButton = startBuildRoot2.findElement(By.cssSelector("button.dps-button.-round.-md.has-action.-external-action.has-button-and-icon"));

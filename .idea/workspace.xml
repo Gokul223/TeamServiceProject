@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c9112bc-6cfb-4bf3-8471-fd923e7fcc1c" name="Changes" comment="Servicenow instance wakeup testcase">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/DataLibrary.java" afterDir="false" />
+    <list default="true" id="6c9112bc-6cfb-4bf3-8471-fd923e7fcc1c" name="Changes" comment="fixed failures on log">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ServicenowCredentials.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/ServicenowCredentials.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testcases/servicenow/LoginServicenowInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testcases/servicenow/LoginServicenowInstance.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +36,9 @@
     &quot;accountId&quot;: &quot;2b1c7015-50c1-454b-b2ec-57272fe2c0b3&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -46,28 +48,67 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.TeamServiceProject [clean,test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.TeamServiceProject [test].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TestNG.LoginServicenowInstance.wakeupServicenowInstance (1).executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LoginServicenowInstance.wakeupServicenowInstance (2).executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LoginServicenowInstance.wakeupServicenowInstance.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.EnableChromeBrowserNotifications.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.TeamServiceProject [clean,test].executor": "Run",
+    "Maven.TeamServiceProject [install].executor": "Run",
+    "Maven.TeamServiceProject [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
+    "Maven.TeamServiceProject [org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile].executor": "Run",
+    "Maven.TeamServiceProject [org.apache.maven.plugins:maven-deploy-plugin:3.1.2:deploy].executor": "Run",
+    "Maven.TeamServiceProject [org.apache.maven.plugins:maven-install-plugin:3.1.2:help].executor": "Run",
+    "Maven.TeamServiceProject [org.apache.maven.plugins:maven-install-plugin:3.1.2:install].executor": "Run",
+    "Maven.TeamServiceProject [test].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TestNG.DemoTC.rundemo.executor": "Run",
+    "TestNG.LoginServicenowInstance.executor": "Run",
+    "TestNG.LoginServicenowInstance.wakeupServicenowInstance (1).executor": "Run",
+    "TestNG.LoginServicenowInstance.wakeupServicenowInstance (2).executor": "Run",
+    "TestNG.LoginServicenowInstance.wakeupServicenowInstance (3).executor": "Run",
+    "TestNG.LoginServicenowInstance.wakeupServicenowInstance.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn test" />
       <command value="mvn clean test" />
+      <command value="mvn test" />
     </option>
   </component>
   <component name="RunManager" selected="TestNG.LoginServicenowInstance.wakeupServicenowInstance">
+    <configuration name="EnableChromeBrowserNotifications" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="selfLearning.EnableChromeBrowserNotifications" />
+      <module name="TeamServiceProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="selfLearning.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginServicenowInstance" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TeamServiceProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testcases.servicenow.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testcases.servicenow" />
+      <option name="MAIN_CLASS_NAME" value="testcases.servicenow.LoginServicenowInstance" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoginServicenowInstance.wakeupServicenowInstance (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="TeamServiceProject" />
       <extension name="coverage">
@@ -86,7 +127,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginServicenowInstance.wakeupServicenowInstance (2)" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginServicenowInstance.wakeupServicenowInstance (3)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="TeamServiceProject" />
       <extension name="coverage">
         <pattern>
@@ -125,8 +166,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.LoginServicenowInstance.wakeupServicenowInstance" />
-        <item itemvalue="TestNG.LoginServicenowInstance.wakeupServicenowInstance (2)" />
+        <item itemvalue="TestNG.LoginServicenowInstance" />
+        <item itemvalue="Application.EnableChromeBrowserNotifications" />
         <item itemvalue="TestNG.LoginServicenowInstance.wakeupServicenowInstance (1)" />
+        <item itemvalue="TestNG.LoginServicenowInstance.wakeupServicenowInstance (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -147,12 +190,57 @@
       <option name="project" value="LOCAL" />
       <updated>1726732393867</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Configured DataProvider to execute multi testdata">
+      <option name="closed" value="true" />
+      <created>1726773815436</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1726773815438</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Updated Excel file">
+      <option name="closed" value="true" />
+      <created>1726811479748</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1726811479748</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added Retry Analyzer">
+      <option name="closed" value="true" />
+      <created>1726826496016</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1726826496017</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added test script to retrive the instance url username and password">
+      <option name="closed" value="true" />
+      <created>1726859527582</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1726859527582</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixed failures on log">
+      <option name="closed" value="true" />
+      <created>1734031992992</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1734031992993</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Servicenow instance wakeup testcase" />
-    <option name="LAST_COMMIT_MESSAGE" value="Servicenow instance wakeup testcase" />
+    <MESSAGE value="Configured DataProvider to execute multi testdata" />
+    <MESSAGE value="Updated Excel file" />
+    <MESSAGE value="Added Retry Analyzer" />
+    <MESSAGE value="Added test script to retrive the instance url username and password" />
+    <MESSAGE value="fixed failures on log" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed failures on log" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
